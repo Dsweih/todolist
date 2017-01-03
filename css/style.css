@@ -1,0 +1,276 @@
+/* ----------------------------- */
+/* CSS Reset */
+/* ----------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ----------------------------- */
+/* Basic Setting */
+/* ----------------------------- */
+body {
+	font-family: Arial, Helvetica, sans-serif, Microsoft JhengHei;
+	font-size: 16px;
+	box-sizing: border-box;
+	color: #666;
+	background-color: #efefef;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix::after {
+	content: " ";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+h1 {
+	font-size: 2.2rem;
+}
+
+h2 {
+	font-size: 1.6rem;
+	color: #333;
+}
+
+.wrap {
+	margin: 0 auto;
+	max-width: 500px;
+}
+
+/* ----------------------------- */
+/* Header */
+/* ----------------------------- */
+header {
+	background: url('../images/backgound.jpg') no-repeat;
+	background-size: cover;
+	padding: 50px 40px;
+	box-shadow: 3px 0 6px #888888;
+	color: #fff;
+	position: relative;
+}
+
+/* ----------------------------- */
+/* Button */
+/* ----------------------------- */
+.button-add, .button-edit, .button-delete, .button-done {
+	color: #666;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	line-height: 56px;
+	padding: 0 8px;
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+.button-add {
+	background: #f00;
+	box-shadow: 0 0 12px #f00;
+	border-radius: 50%;
+	color: #fff;
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+	position: absolute;
+	bottom: -22px;
+	right: 22px;
+}
+
+.button-add:hover {
+	box-shadow: none;
+}
+
+.button-edit, .button-delete, .button-done {
+	float: right;
+	width: 10%;
+}
+
+.button-edit:hover {
+	color: #0f0;
+}
+
+.button-delete:hover {
+	color: #f00;
+}
+
+.button-done:hover {
+	color: #00f;
+}
+
+/* ----------------------------- */
+/* Report */
+/* ----------------------------- */
+.report {
+	padding: 22px;
+	background-color: #fff;
+	box-shadow: 0 3px 6px #888888;
+	border-bottom: 1px solid #888888;
+}
+
+.report p {
+	margin-top: 6px;
+}
+
+.task {
+	box-shadow: 0 3px 6px #888888;
+	margin-top: 6px;
+	height: 56px;
+	background-color: #fff;
+}
+
+
+/* ----------------------------- */
+/* Task */
+/* ----------------------------- */
+.task:first-child {
+	margin-top: 0;
+}
+
+.task-label {
+	line-height: 56px;
+	margin: 0;
+	padding-left: 12px;
+	position: relative;
+	float: left;
+	cursor: pointer;
+	width: 10%;
+
+}
+
+.task-title {
+	line-height: 56px;
+	font-size: 1rem;
+	float: left;
+	border: none;
+	outline: none;
+	padding: 0;
+	width: 52%;
+	color: #666;
+}
+
+.done {
+	background-color: #efefef;
+}
+
+.done .task-title {
+	background-color: #efefef;
+}
+
+.done .button-edit, .done .button-done {
+	display: none;
+}
+
+/* ----------------------------- */
+/* Label */
+/* ----------------------------- */
+.label-list {
+	border-radius: 6%;
+	background-color: #fff;
+	position: absolute;
+	top: 46px;
+	display: none;
+	z-index: 9999;
+}
+
+.label-list li {
+	border: 1px solid #999;
+	height: 44px;
+	line-height: 44px;
+	border-bottom: 1px solid #999;
+	padding: 0 6px;
+	width: 100px;
+	font-family: Arial, Helvetica, sans-serif, Microsoft JhengHei;
+	cursor: pointer;
+}
+
+.label-list li:first-child {
+	border-radius: 6% 6% 0 0;
+	border-bottom: 0;
+}
+
+.label-list li:last-child {
+	border-top: 0;
+	border-radius: 0 0 6% 6%;
+}
+
+.label-list li:hover {
+	background-color: #e4e4e4;
+}
+
+.label-list li i {
+	margin-right: 5px;
+}
+
+.label-urgent {
+	color: #f00;
+}
+
+.label-urgent::before {
+	margin-right: 5px;
+	content: "\f071";
+	font-family: FontAwesome;
+}
+
+.label-important {
+	color: #ffbe00;
+}
+
+.label-important::before {
+	margin-right: 5px;
+	content: "\f005";
+	font-family: FontAwesome;
+}
+
+.label-normal {
+	color: #3772fd;
+}
+
+.label-normal::before {
+	margin-right: 5px;
+	content: "\f111";
+	font-family: FontAwesome;
+}

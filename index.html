@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Todo list with Firebase">
+    <meta name="keyword" content="Todo, Todo list, Firebase">
+    <meta property="og:title" content="Todo List">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:description" content="Todo list with Firebase">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Todo list"/>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1><span class="month"></span> <span class="year"></span><br>
+				<span class="date"></span> <span class="day">s</span></h1>
+            <button class="button-add jq--button-add fa fa-plus fa-lg" aria-hidden="true"></button>
+        </header>
+        <section>
+        	<div class="report">
+        		<h2>Your tasks of today</h2>
+        		<p><span class="jq--done-task">0</span> done / <span class="jq--total-task">0</span> tasks</p>
+        	</div>
+            <ul class="jq--tasks">
+                <!-- dynamic content -->
+            </ul>
+        </section>
+    </div>
+    <!-- template -->
+    <template id="template-task">
+        <li class="task jq--task clearfix">
+            <div class="task-label jq--task-label" data-label="normal" aria-hidden="true">
+                <ul class="label-list jq--label-list">
+                    <li class="label-urgent" aria-hidden="true">Urgent</li>
+                    <li class="label-important" aria-hidden="true">Important</li>
+                    <li class="label-normal" aria-hidden="true">Normal</li>
+                </ul>
+            </div>
+            <input type="text" class="task-title jq--task-title" placeholder="Please type a new task and hit enter" readonly>
+            <button class="button-delete jq--button-delete fa fa-times" title="Delete"></button>
+            <button class="button-done jq--button-done fa fa-check" title="Mark Done"></button>
+            <button class="button-edit jq--button-edit fa fa-pencil" title="Edit"></button>
+        </li>
+    </template>
+</body>
+</html>
